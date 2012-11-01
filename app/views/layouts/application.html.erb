@@ -2,9 +2,11 @@
 <html>
 <head>
 <title>Shu's Online Jewel Store </title>
+
  <%= stylesheet_link_tag	"application", media: "all" %> 
  <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
+
 </head>
 
 
@@ -26,27 +28,37 @@
 
 <div id="columns">
  <div id="side"> 
+   <% if session[:user_id] %> 
+  
+   <% end %>
+   
    <% if @cart %>
+ 
 	<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-		<%= render @cart %> 
+	  	<%= render @cart %> 
     <% end %>
    <% end %>
 	
 	<ul>
+		<li> <%= button_to 'Login', login_url, method: :get %> </li>
+		<br />
+		<li>  <%= button_to 'Logout', logout_path, method: :delete %></li>
+		<br />
+		   
  		<li><img alt="diamond" src="/assets/diamond_a.png"><a href="http://localhost:3000/"> Home</a></li> 
- 		<li><img alt="diamond" src="/assets/diamond_b.png"><a href="http://www..../faq"> Questions</a></li> 
-		 <li><img alt="diamond" src="/assets/diamond_c.png"><a href="http://www..../news"> News</a></li> 
-		 <li><img alt="diamond" src="/assets/diamond_d.png"><a href="http://www..../contact"> Contact</a></li>
+ 		<li><img alt="diamond" src="/assets/diamond_b.png"><a href="http://"> Questions</a></li> 
+		 <li><img alt="diamond" src="/assets/diamond_c.png"><a href="http://"> News</a></li> 
+		 <li><img alt="diamond" src="/assets/diamond_d.png"><a href="http://"> Contact</a></li>
 	</ul>
 
   <% if session[:user_id] %> 
     <ul>
-	<li><%= link_to 'Orders',	orders_path	%></li>
-	<li><%= link_to 'Products', products_path %></li> 
-	<li><%= link_to 'Users',	users_path	%></li>
+	<li><li><img alt="diamond" src="/assets/diamond_e.png"><%= link_to ' Orders', orders_path	%></li>
+	<li><li><img alt="diamond" src="/assets/diamond_c.png"><%= link_to ' Products', products_path %></li> 
+	<li><li><img alt="diamond" src="/assets/diamond_a.png"><%= link_to ' Users',	users_path	%></li>
    </ul>
 
-    <%= button_to 'Logout', logout_path, method: :delete %>
+
  	<% end %>
 </div>
 	<div id="main">

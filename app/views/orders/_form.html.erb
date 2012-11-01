@@ -39,17 +39,16 @@
         <input type="text" size="2" class="card-expiry-month"/>
         <span> / </span>
         <input type="text" size="4" class="card-expiry-year"/>
-      
        <label>Expiration (MM/YYYY)</label>
        </div> 
-      <br />
-
+ 
+		<p> <br />	<br /> ----------------------------- </p>
     <button type="submit" class="submit-button">Submit Payment</button>
-    
 
     </form>
+    <p> <br />	</p>
+      <div class="actions"> <%= f.submit t('.submit') %></div>
   </div>
-  <div class="actions">
-    <%= f.submit t('.submit') %>
-  </div>
+  
+
 <% end %>
