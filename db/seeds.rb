@@ -6,7 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.delete_all
-Product.create(title: 'CoffeeScript',
+
+
+Product.create(title: 'product111111',
   description:
       %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -15,7 +17,7 @@ Product.create(title: 'CoffeeScript',
 	shows you how to hold onto all the power and flexibility of JavaScript
 	while writing clearer, cleaner, and safer code.
       </p>},
-  image_url:   'cs.jpg',    
+  image_url:   'http://www.jewelryexchange.com/images/product/SOL_Oval49.jpg',    
   price: 36.00)
 # . . .
 Product.create(title: 'Programming Ruby 1.9',
@@ -25,7 +27,7 @@ Product.create(title: 'Programming Ruby 1.9',
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
       </p>},
-  image_url: 'ruby.jpg',
+  image_url: 'http://www.jewelryexchange.com/images/product/SOL_Oval49.jpg',
   price: 49.95)
 # . . .
 

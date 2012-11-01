@@ -15,11 +15,11 @@
 */
 
 #banner {
-  background: #9c9;
+  background: #FFF0F5;
   padding: 10px;
   border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  font: small-caps 40px/40px "Comic Sans MS", serif;
+  color: #F50E0E;
   text-align: center;
 
   img {
@@ -37,7 +37,7 @@
 }
 
 #columns {
-  background: #141;
+  background: #FFF0F5;
 
   #main {
     margin-left: 17em;
@@ -50,7 +50,7 @@
     float: left;
     padding: 1em 2em;
     width: 13em;
-    background: #141;
+    background: #FFF0F5;
 
 /* START_HIGHLIGHT */
     form, div {
@@ -63,7 +63,7 @@
 
     #cart {
       font-size: smaller;
-      color:     white;
+      color:     #149C1F;
 
       table {
         border-top:    1px dotted #595;
@@ -80,7 +80,7 @@
         list-style: none;
 
         a {
-          color: #bfb;
+          color: #44A;
           font-size: small;
         }
       }
