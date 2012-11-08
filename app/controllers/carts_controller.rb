@@ -1,3 +1,5 @@
+#carts_controller.rb
+
 class CartsController < ApplicationController
   skip_before_filter :authorize, only: [:create, :update, :destroy]
 
@@ -75,7 +77,15 @@ end
       end
     end
   end
-
+  
+  
+  def authorize
+    unless User.find_by_id(session[:user_id])
+    	redirect_to login_url, notice: "Please log in"
+    end
+  end
+  
+  
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
@@ -90,13 +100,6 @@ end
   end
   
   
-  
-  def authorize
-    unless User.find_by_id(session[:user_id])
-    	redirect_to login_url, notice: "Please log in"
-    end
-  end
-  
-  
+
   
 end

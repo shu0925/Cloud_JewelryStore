@@ -1,50 +1,37 @@
 <!DOCTYPE html>
+<!-- app/views/layout/application -->
 <html>
 <head>
 <title>Shu's Online Jewel Store </title>
-
+ <%= stylesheet_link_tag "scaffold" %>
  <%= stylesheet_link_tag	"application", media: "all" %> 
  <%= javascript_include_tag "application" %>
-<%= csrf_meta_tags %>
-
+ <%= csrf_meta_tags %>
 </head>
 
 
 <body class="<%= controller.controller_name %>">
-
-<div id="banner">
-
-<%= form_tag store_path, class: 'locale' do %>
-	  <%= select_tag 'set_locale',
-	    options_for_select(LANGUAGES, I18n.locale.to_s),
-	    onchange: 'this.form.submit()' %>
-	  <%= submit_tag 'submit' %>
-	  <%= javascript_tag "$('.local input').hide()" %>
-	<% end %>
-
- <%= image_tag("logo.png") %> 
+  <div id="banner">
+    <%= form_tag store_path, :class => 'locale' do %>
+      <%= select_tag 'set_locale', 
+            options_for_select(LANGUAGES, I18n.locale.to_s),
+            :onchange => 'this.form.submit()' %>
+      <%= submit_tag 'submit' %>
+      <%= javascript_tag "$('.locale input').hide()" %>
+    <% end %>
+   <%= image_tag("logo.png") %> 
  <%= @page_title || " ♥ shu's jewelry store ♥" %>
-</div> 
-
-<div id="columns">
- <div id="side"> 
-   <% if session[:user_id] %> 
-  
-   <% end %>
-   
-   <% if @cart %>
- 
-	<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-	  	<%= render @cart %> 
+  </div>
+  <div id="columns">
+<div id="side">
+      <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, :id => 'cart') do %>
+          <%= render @cart %>
     <% end %>
    <% end %>
 	
 	<ul>
-		<li> <%= button_to 'Login', login_url, method: :get %> </li>
-		<br />
-		<li>  <%= button_to 'Logout', logout_path, method: :delete %></li>
-		<br />
-		   
+
  		<li><img alt="diamond" src="/assets/diamond_a.png"><a href="http://localhost:3000/"> Home</a></li> 
  		<li><img alt="diamond" src="/assets/diamond_b.png"><a href="http://"> Questions</a></li> 
 		 <li><img alt="diamond" src="/assets/diamond_c.png"><a href="http://"> News</a></li> 
@@ -57,9 +44,17 @@
 	<li><li><img alt="diamond" src="/assets/diamond_c.png"><%= link_to ' Products', products_path %></li> 
 	<li><li><img alt="diamond" src="/assets/diamond_a.png"><%= link_to ' Users',	users_path	%></li>
    </ul>
-
-
+		<li> <%= button_to 'Login', login_url, method: :get %> </li>
+		<br />
+		<li>  <%= button_to 'Logout', logout_path, :method => :delete %></li>
+		<br />
  	<% end %>
+ 	
+ 	<br />
+ 	<br />
+ 	<br />
+ 	   <div id="time">Date: <%= Time.now.strftime('%D') %></div>
+ 	   
 </div>
 	<div id="main">
 	<%= yield %>

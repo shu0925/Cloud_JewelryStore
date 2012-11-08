@@ -46,7 +46,7 @@ es:
 #START:layout
   layouts:
     application:
-      title:       "Publicaciones de Pragmatic"
+      title:       "Jewelry Store de Shu"
       home:        "Inicio"
       questions:   "Preguntas"
       news:        "Noticias"
@@ -64,7 +64,7 @@ es:
 #START:main
   store:
     index:
-      title_html:  "Su Cat&aacute;logo de Pragmatic"
+      title_html:  "Su Cat&aacute;logo de Jewelry"
       add_html:    "A&ntilde;adir al Carrito"
 #END:main
 

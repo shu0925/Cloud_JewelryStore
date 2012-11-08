@@ -1,3 +1,5 @@
+<!-- app/views/line_items/_line_item.html.erb -->
+
 <% if line_item == @current_item %>
 <tr id="current_item">
 <% else %>
@@ -6,4 +8,5 @@
 	<td><%= line_item.quantity %>&times;</td>
 	<td><%= line_item.product.title %></td>
 	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+	<td><%= button_to 'x', line_item, :method => :delete, :confirm => 'Delete this item ?' %></td>
 </tr>
