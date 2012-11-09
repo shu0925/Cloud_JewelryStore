@@ -3,7 +3,15 @@
 <% end %>
 
 
-<h1> Jewerly List </h1>
+
+<h1> Jewerly List... </h1>
+
+<% form_tag grants_path, :method=>'get' do %>
+<p> <%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name =>nail %>
+</p>
+<% end %>
+
 
 <% @products.each do |product| %>
     <div class="entry">
